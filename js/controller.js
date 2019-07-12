@@ -14,4 +14,11 @@ var moveLeft         =  false;
 var moveRight        =  false;
 var moveUp           =  false;
 var moveDown         =  false;
+
+// Start of moving
+
+$(document).on('onkeydown')
+
 });
+
+
