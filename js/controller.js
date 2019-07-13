@@ -87,7 +87,6 @@ $(document).on('onkeydown',function (e) {
         if (collision(rocket,other1) || collision(rocket,other2),collision(rocket,other3));
     }
 
-
     function collision($div1, $div2) {
         var x1 = $div1.offset().left;
         var y1 = $div1.offset().top;
