@@ -15,9 +15,14 @@ var moveRight        =  false;
 var moveUp           =  false;
 var moveDown         =  false;
 
+
+var gameOver         =  false;
 // Start of moving
 
-$(document).on('onkeydown')
+$(document).on('onkeydown',function (e) {
+    if (gameOver===false){}
+
+});
 
 });
 
