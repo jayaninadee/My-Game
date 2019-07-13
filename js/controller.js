@@ -5,7 +5,7 @@ var rocket           =   $('#rocket');
 var other1           =   $('other1');
 var other2           =   $('other2');
 var other3           =   $('other3');
-
+var score            =   $('score');
 
 var containerLeft    =   parseInt(container.css('left'));
 var containerWidth   =   parseInt(container.width());
@@ -20,7 +20,10 @@ var moveUp           =  false;
 var moveDown         =  false;
 
 
+var scoreCounter     =  1;
 var gameOver         =  false;
+var speed            =  2;
+var rootSpeed        =  5;
 // Start of moving
 
 $(document).on('onkeydown',function (e) {
@@ -85,8 +88,11 @@ $(document).on('onkeydown',function (e) {
     animationID =requestAnimationFrame(repeat);
     function repeat() {
         if (collision(rocket,other1) || collision(rocket,other2)|| collision(rocket,other3));
-
+        stopGame();
+        return;
     }
+
+    scoreCounter++;
 
 
     function stopGame() {
