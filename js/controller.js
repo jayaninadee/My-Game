@@ -84,9 +84,21 @@ $(document).on('onkeydown',function (e) {
 
     animationID =requestAnimationFrame(repeat);
     function repeat() {
-        if (collision(rocket,other1) || collision(rocket,other2),collision(rocket,other3));
+        if (collision(rocket,other1) || collision(rocket,other2)|| collision(rocket,other3));
+
     }
 
+
+    function stopGame() {
+        gameOver=true;
+        cancelAnimationFrame(animationID);
+        cancelAnimationFrame(moveLeft);
+        cancelAnimationFrame(moveRight);
+        cancelAnimationFrame(moveUp);
+        cancelAnimationFrame(moveDown);
+
+
+    }
     function collision($div1, $div2) {
         var x1 = $div1.offset().left;
         var y1 = $div1.offset().top;
