@@ -32,10 +32,28 @@ $(document).on('onkeydown',function (e) {
             moveDown = requestAnimationFrame(down);
         }
     }
-
-
-
 });
+
+    $(document).on('onkeyup',function (e) {
+        if (gameOver===false) {
+            var key=e.keyCode;
+            if (key === 37){
+                cancelAnimationFrame(moveLeft);
+                moveLeft===false;
+            }else if (key === 39 ) {
+                cancelAnimationFrame(moveRight);
+                moveRight===false;
+            }else if (key === 38 ) {
+                cancelAnimationFrame(moveUp);
+                moveUp===false;
+            }else if (key === 40 ) {
+                cancelAnimationFrame(moveDown);
+                moveDown===false;
+            }
+        }
+    });
+
+
 
 });
 

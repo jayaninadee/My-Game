@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="000a2cac-5434-4608-827c-8f7268d3a28b" name="Default Changelist" comment="16">
+    <list default="true" id="000a2cac-5434-4608-827c-8f7268d3a28b" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/js/controller.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/controller.js" afterDir="false" />
     </list>
@@ -41,8 +41,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/js/controller.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="345">
-              <caret line="23" lean-forward="true" selection-start-line="23" selection-end-line="23" />
+            <state relative-caret-position="10">
+              <caret line="29" column="47" lean-forward="true" selection-start-line="29" selection-start-column="47" selection-end-line="29" selection-end-column="47" />
             </state>
           </provider>
         </entry>
@@ -156,7 +156,7 @@
       <workItem from="1562766752331" duration="3751000" />
       <workItem from="1562814544078" duration="5177000" />
       <workItem from="1562918679804" duration="11305000" />
-      <workItem from="1562994908994" duration="1888000" />
+      <workItem from="1562994908994" duration="3496000" />
     </task>
     <task id="LOCAL-00001" summary="d">
       <created>1562745776319</created>
@@ -326,14 +326,28 @@
       <option name="project" value="LOCAL" />
       <updated>1562950061079</updated>
     </task>
-    <option name="localTasksCounter" value="25" />
+    <task id="LOCAL-00025" summary="17">
+      <created>1562998882955</created>
+      <option name="number" value="00025" />
+      <option name="presentableId" value="LOCAL-00025" />
+      <option name="project" value="LOCAL" />
+      <updated>1562998882955</updated>
+    </task>
+    <task id="LOCAL-00026" summary="18">
+      <created>1562999943241</created>
+      <option name="number" value="00026" />
+      <option name="presentableId" value="LOCAL-00026" />
+      <option name="project" value="LOCAL" />
+      <updated>1562999943241</updated>
+    </task>
+    <option name="localTasksCounter" value="27" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="26467000" />
+    <option name="totallyTimeSpent" value="28075000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-3" y="0" width="1372" height="743" extended-state="7" />
+    <frame x="-3" y="0" width="1372" height="743" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.2659091" />
@@ -390,7 +404,9 @@
     <MESSAGE value="14" />
     <MESSAGE value="15" />
     <MESSAGE value="16" />
-    <option name="LAST_COMMIT_MESSAGE" value="16" />
+    <MESSAGE value="17" />
+    <MESSAGE value="18" />
+    <option name="LAST_COMMIT_MESSAGE" value="18" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/css/bootstrap.min.css" />
@@ -431,8 +447,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/js/controller.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="345">
-          <caret line="23" lean-forward="true" selection-start-line="23" selection-end-line="23" />
+        <state relative-caret-position="10">
+          <caret line="29" column="47" lean-forward="true" selection-start-line="29" selection-start-column="47" selection-end-line="29" selection-end-column="47" />
         </state>
       </provider>
     </entry>
