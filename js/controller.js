@@ -96,7 +96,8 @@ $(document).on('onkeydown',function (e) {
         cancelAnimationFrame(moveRight);
         cancelAnimationFrame(moveUp);
         cancelAnimationFrame(moveDown);
-
+        restartdiv.slideDown();
+        restartbtn.focus();
 
     }
     function collision($div1, $div2) {
