@@ -6,6 +6,8 @@ var other1           =   $('other1');
 var other2           =   $('other2');
 var other3           =   $('other3');
 var score            =   $('score');
+var restartdiv       =   $('#restartdiv');
+var restartbtn       =   $('#restart');
 
 var containerLeft    =   parseInt(container.css('left'));
 var containerWidth   =   parseInt(container.width());
@@ -19,11 +21,12 @@ var moveRight        =  false;
 var moveUp           =  false;
 var moveDown         =  false;
 
-
 var scoreCounter     =  1;
 var gameOver         =  false;
 var speed            =  2;
 var rootSpeed        =  5;
+
+
 // Start of moving
 
 $(document).on('onkeydown',function (e) {
@@ -93,7 +96,31 @@ $(document).on('onkeydown',function (e) {
     }
 
     scoreCounter++;
+    if (scoreCounter % 20 == 0){
+        score.text(parseInt(score.text())+1);
+    }if (scoreCounter % 500 == 0){
+        speed++;
+        rootSpeed++;
+    }
 
+    otherDown(other1);
+    otherDown(other2);
+    otherDown(other3);
+    rootDown(root);
+
+    function rocketDown(rocket) {
+    var rocketCurrentTop    =   parseInt(rocket.css('top'));
+    if (rocketCurrentTop    >   containerHeight){
+        rocketCurrentTop    =   -200;
+        var rocketLeft      =   parseInt(Math.random() * (containerWidth-rocketWidth));
+        rocket.css('left',rocketLeft);
+        }
+    rocket.css('top',rocketCurrentTop   +   speed);
+    }
+
+    restartbtn.click(function () {
+        location.reload();
+    });
 
     function stopGame() {
         gameOver=true;
@@ -106,6 +133,7 @@ $(document).on('onkeydown',function (e) {
         restartbtn.focus();
 
     }
+
     function collision($div1, $div2) {
         var x1 = $div1.offset().left;
         var y1 = $div1.offset().top;
