@@ -20,7 +20,20 @@ var gameOver         =  false;
 // Start of moving
 
 $(document).on('onkeydown',function (e) {
-    if (gameOver===false){}
+    if (gameOver===false) {
+        var key=e.keyCode;
+        if (key === 37 && moveLeft===false){
+            moveLeft=requestAnimationFrame(left);
+        }else if (key === 39 && moveRight===false) {
+            moveRight = requestAnimationFrame(right);
+        }else if (key === 38 && moveUp===false) {
+            moveUp = requestAnimationFrame(up);
+        }else if (key === 40 && moveDown===false) {
+            moveDown = requestAnimationFrame(down);
+        }
+    }
+
+
 
 });
 
