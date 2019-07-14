@@ -16,6 +16,9 @@ $(function () {
     var rocketHeight     =   parseInt(rocket.height());
 
 
+    // var mySound            =  new mySound();
+    // var myMusic            =  new myMusic();
+
     var gameOver         =  false;
     var scoreCounter     =  1;
     var speed            =  2;
@@ -92,7 +95,23 @@ $(document).on('keydown',function (e) {
         }
     }
 
+    // function sound(src) {
+    //     this.sound = document.createElement("audio");
+    //     this.sound.src = src;
+    //     this.sound.setAttribute("preload", "auto");
+    //     this.sound.setAttribute("controls", "none");
+    //     this.sound.style.display = "none";
+    //     document.body.appendChild(this.sound);
+    //     this.play = function(){
+    //         this.sound.play();
+    //     }
+    //     this.stop = function(){
+    //         this.sound.pause();
+    //     }
+    // }
+
     animationID =requestAnimationFrame(repeat);
+
     function repeat() {
         if (collision(rocket, other1) || collision(rocket, other2) || collision(rocket, other3)) {
             stopGame();
@@ -100,6 +119,7 @@ $(document).on('keydown',function (e) {
         }
 
         scoreCounter++;
+
         if (scoreCounter % 20 == 0) {
             score.text(parseInt(score.text()) + 1);
         }
@@ -111,7 +131,6 @@ $(document).on('keydown',function (e) {
         rocketDown(other1);
         rocketDown(other2);
         rocketDown(other3);
-        rootDown(root);
 
         animationID = requestAnimationFrame(repeat);
     }
@@ -125,16 +144,10 @@ $(document).on('keydown',function (e) {
         rocket.css('top',rocketCurrentTop   +   speed);
     }
 
-    function rootDown(root){
-        var rootCurrentTop      =   parseInt(root.css('top'));
-        if ( rootCurrentTop     >   containerHeight){
-            rootCurrentTop      =   -300;
-        }root.css('top',rootCurrentTop + rootSpeed);
-
-    }
     restartbtn.click(function () {
         location.reload();
     });
+
 
     function stopGame() {
         gameOver=true;

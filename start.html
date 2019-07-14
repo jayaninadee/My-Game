@@ -3,17 +3,22 @@
 <head>
     <meta charset="UTF-8">
     <title>Space Game</title>
-
     <link rel="icon" href="assests/img/rocketgif-small.gif">
+    <link href="https://fonts.googleapis.com/css?family=Righteous&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Carter+One&display=swap" rel="stylesheet">
     <link href="css/style.css" rel="stylesheet">
-
 </head>
 <body background="assests/img/wall3.gif">
-<div id="help">
-    <p>controller</p>
-</div>
+<!--<embed src="assests/audio/backM.mp3" autostart="true" loop="true"-->
+<!--       width="2" height="0" >  </embed>-->
+<!--<div id="help">-->
+<!--<p>Use Arrow Keys</p>-->
+<!--</div>-->
+
 <div id="scoreDiv">
-    Score : <span id="score">0</span>
+   <img src="assests/img/planet.gif" width="30%">
+    Score:<span id="score">0 </span>
+
 </div>
 <div id="container">
     <div id="root1" class="root">
@@ -23,7 +28,7 @@
         <img src="assests/img/rocket.gif" alt="mainObj" width="100%">
     </div>
     <div id="other1" class="rocket">
-        <img src="assests/img/alien3.gif" alt="other" width="100%">
+        <img src="assests/img/alien2.gif" alt="other" width="100%">
     </div>
     <div id="other2" class="rocket">
         <img src="assests/img/alien3.gif" alt="other" width="100%">
@@ -31,15 +36,24 @@
     <div id="other3" class="rocket">
         <img src="assests/img/fireb.gif" alt="other" width="100%">
     </div>
+    <div id="startdiv">
+        <button id="start">
+            <img src="assests/img/rocketgif-small.gif" width="20%">
+            <br>
+            Start <br>
+            <small class="small_text">(Press Enter)</small>
+        </button>
+    </div>
 <div id="restartdiv">
 <button id="restart">
-    Restart
-    <small class="small_text">(press Enter)</small>
-
+    <img src="assests/img/rocketgif-small.gif" width="20%">
+    <br>
+    Restart <br>
+    <small class="small_text">(Press Enter)</small>
 </button>
 </div>
-
 </div>
+
 <script src="js/jquery.min.js"></script>
 <script src="js/controller.js"></script>
 </body>
