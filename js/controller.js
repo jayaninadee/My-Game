@@ -1,36 +1,43 @@
 $(function () {
     var animationID;
-var container        =   $('#container');
-var rocket           =   $('#rocket');
-var other1           =   $('other1');
-var other2           =   $('other2');
-var other3           =   $('other3');
-var score            =   $('score');
-var restartdiv       =   $('#restartdiv');
-var restartbtn       =   $('#restart');
+    var container        =   $('#container');
+    var rocket           =   $('#rocket');
+    var other1           =   $('#other1');
+    var other2           =   $('#other2');
+    var other3           =   $('#other3');
+    var root             =   $('#root');
 
-var containerLeft    =   parseInt(container.css('left'));
-var containerWidth   =   parseInt(container.width());
-var containerHeight  =   parseInt(container.height());
-var rocketWidth      =   parseInt(rocket.width());
-var rocketHeight     =   parseInt(rocket.height());
+    var restartdiv       =   $('#restartdiv');
+    var restartbtn       =   $('#restart');
+    var score            =   $('#score');
+
+    var containerLeft    =   parseInt(container.css('left'));
+    var containerWidth   =   parseInt(container.width());
+    var containerHeight  =   parseInt(container.height());
+    var rocketWidth      =   parseInt(rocket.width());
+    var rocketHeight     =   parseInt(rocket.height());
+
+
+    var gameOver         =  false;
+    var scoreCounter     =  1;
+    var speed            =  2;
+    var rootSpeed        =  5;
 
 //Moving
-var moveLeft         =  false;
-var moveRight        =  false;
-var moveUp           =  false;
-var moveDown         =  false;
+    var moveLeft         =  false;
+    var moveRight        =  false;
+    var moveUp           =  false;
+    var moveDown         =  false;
 
-var scoreCounter     =  1;
-var gameOver         =  false;
-var speed            =  2;
-var rootSpeed        =  5;
+
+
+
 
 
 // Start of moving
 
-$(document).on('onkeydown',function (e) {
-    if (gameOver===false) {
+$(document).on('keydown',function (e) {
+    if (gameOver === false) {
         var key=e.keyCode;
         if (key === 37 && moveLeft===false){
             moveLeft=requestAnimationFrame(left);
