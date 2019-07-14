@@ -7,9 +7,7 @@ $(function () {
     var other3           =   $('#other3');
     var root             =   $('#root1');
 
-    var restartdiv       =   $('#restartdiv');
-    var restartbtn       =   $('#restart');
-    var score            =   $('#score');
+
 
     var containerLeft    =   parseInt(container.css('left'));
     var containerWidth   =   parseInt(container.width());
@@ -30,7 +28,9 @@ $(function () {
     var moveDown         =  false;
 
 
-
+    var restartdiv       =   $('#restartdiv');
+    var restartbtn       =   $('#restart');
+    var score            =   $('#score');
 // Start of moving
 
 $(document).on('keydown',function (e) {
@@ -53,16 +53,16 @@ $(document).on('keydown',function (e) {
             var key=e.keyCode;
             if (key === 37){
                 cancelAnimationFrame(moveLeft);
-                moveLeft === false;
+                moveLeft = false;
             }else if (key === 39 ) {
                 cancelAnimationFrame(moveRight);
-                moveRight === false;
+                moveRight = false;
             }else if (key === 38 ) {
                 cancelAnimationFrame(moveUp);
-                moveUp === false;
+                moveUp = false;
             }else if (key === 40 ) {
                 cancelAnimationFrame(moveDown);
-                moveDown === false;
+                moveDown = false;
             }
         }
     });
@@ -94,34 +94,44 @@ $(document).on('keydown',function (e) {
 
     animationID =requestAnimationFrame(repeat);
     function repeat() {
-        if (collision(rocket,other1) || collision(rocket,other2)|| collision(rocket,other3));
-        stopGame();
-        return;
-    }
-
-    scoreCounter++;
-    if (scoreCounter % 20 == 0){
-        score.text(parseInt(score.text())+1);
-    }if (scoreCounter % 500 == 0){
-        speed++;
-        rootSpeed++;
-    }
-
-    otherDown(other1);
-    otherDown(other2);
-    otherDown(other3);
-    rootDown(root);
-
-    function rocketDown(rocket) {
-    var rocketCurrentTop    =   parseInt(rocket.css('top'));
-    if (rocketCurrentTop    >   containerHeight){
-        rocketCurrentTop    =   -200;
-        var rocketLeft      =   parseInt(Math.random() * (containerWidth-rocketWidth));
-        rocket.css('left',rocketLeft);
+        if (collision(rocket, other1) || collision(rocket, other2) || collision(rocket, other3)) {
+            stopGame();
+            return;
         }
-    rocket.css('top',rocketCurrentTop   +   speed);
+
+        scoreCounter++;
+        if (scoreCounter % 20 == 0) {
+            score.text(parseInt(score.text()) + 1);
+        }
+        if (scoreCounter % 500 == 0) {
+            speed++;
+            rootSpeed++;
+        }
+
+        rocketDown(other1);
+        rocketDown(other2);
+        rocketDown(other3);
+        rootDown(root);
+
+        animationID = requestAnimationFrame(repeat);
+    }
+    function rocketDown(rocket) {
+        var rocketCurrentTop    =   parseInt(rocket.css('top'));
+            if (rocketCurrentTop>   containerHeight){
+            rocketCurrentTop    =   -200;
+            var rocketLeft      =   parseInt(Math.random() * (containerWidth-rocketWidth));
+            rocket.css('left',rocketLeft);
+            }
+        rocket.css('top',rocketCurrentTop   +   speed);
     }
 
+    function rootDown(root){
+        var rootCurrentTop      =   parseInt(root.css('top'));
+        if ( rootCurrentTop     >   containerHeight){
+            rootCurrentTop      =   -300;
+        }root.css('top',rootCurrentTop + rootSpeed);
+
+    }
     restartbtn.click(function () {
         location.reload();
     });
