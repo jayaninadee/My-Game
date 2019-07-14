@@ -5,7 +5,7 @@ $(function () {
     var other1           =   $('#other1');
     var other2           =   $('#other2');
     var other3           =   $('#other3');
-    var root             =   $('#root');
+    var root             =   $('#root1');
 
     var restartdiv       =   $('#restartdiv');
     var restartbtn       =   $('#restart');
@@ -31,9 +31,6 @@ $(function () {
 
 
 
-
-
-
 // Start of moving
 
 $(document).on('keydown',function (e) {
@@ -51,27 +48,27 @@ $(document).on('keydown',function (e) {
     }
 });
 
-    $(document).on('onkeyup',function (e) {
+    $(document).on('keyup',function (e) {
         if (gameOver===false) {
             var key=e.keyCode;
             if (key === 37){
                 cancelAnimationFrame(moveLeft);
-                moveLeft===false;
+                moveLeft === false;
             }else if (key === 39 ) {
                 cancelAnimationFrame(moveRight);
-                moveRight===false;
+                moveRight === false;
             }else if (key === 38 ) {
                 cancelAnimationFrame(moveUp);
-                moveUp===false;
+                moveUp === false;
             }else if (key === 40 ) {
                 cancelAnimationFrame(moveDown);
-                moveDown===false;
+                moveDown === false;
             }
         }
     });
 
     function left() {
-    if (gameOver===false && parseInt(rocket.css('left'))>0){
+    if (gameOver === false && parseInt(rocket.css('left'))>0){
     rocket.css('left',parseInt(rocket.css('left'))-5);
     moveLeft =requestAnimationFrame(left);
         }
